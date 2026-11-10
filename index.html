@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz de Llengua</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- INICI -->
+    <section id="start" class="screen active">
+      <p class="eyebrow">Llengua catalana</p>
+      <h1>Quiz d’examen</h1>
+      <p class="sub">Pròleg, mites, vocabulari, dialectes i ortografia. Tria què vols repassar.</p>
+
+      <h2 class="label">Temes</h2>
+      <div id="topics" class="chips"></div>
+
+      <h2 class="label">Nombre de preguntes</h2>
+      <div id="counts" class="chips">
+        <button class="chip" data-n="10">10</button>
+        <button class="chip" data-n="20">20</button>
+        <button class="chip on" data-n="0">Totes</button>
+      </div>
+
+      <button id="startBtn" class="btn primary">Començar</button>
+    </section>
+
+    <!-- PREGUNTA -->
+    <section id="quiz" class="screen">
+      <div class="top">
+        <span id="counter">1 / 10</span>
+        <span id="tag" class="tag"></span>
+      </div>
+      <div class="bar"><div id="barFill"></div></div>
+      <h2 id="question" class="question"></h2>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback"></div>
+      <button id="nextBtn" class="btn primary hidden">Següent</button>
+    </section>
+
+    <!-- RESULTATS -->
+    <section id="result" class="screen">
+      <div class="ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="52"/>
+          <circle id="ringFg" class="ring-fg" cx="60" cy="60" r="52"/>
+        </svg>
+        <div id="pct" class="pct">0%</div>
+      </div>
+      <h1 id="resTitle">Fet!</h1>
+      <p id="resSub" class="sub"></p>
+      <div id="wrongList" class="wrong-list"></div>
+      <div class="row">
+        <button id="retryWrong" class="btn primary">Repassar errors</button>
+        <button id="restart" class="btn ghost">Tornar a començar</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
